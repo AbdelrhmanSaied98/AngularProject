@@ -1,0 +1,22 @@
+
+    <div class="item-medium-1__alert" *ngIf="productItem.discount">Sale</div>
+    <div class="item-medium-1__image image" [style]="'background-image:url('+productItem.imageUrl+')'">
+        <a (click)="onItemAdded()" href="#" class="item-medium-1__action">Add to Cart</a>
+    </div>
+    <a href="#">
+        <h4>{{productItem.data[0].name}}</h4>
+        <div>
+            <!-- <del>{{productitem.discount ? productitem.price : ""}}</del> -->
+            <del *ngIf="productItem.discount">${{productItem.price}}</del>
+            <span class="lable">${{productItem.discount ? productItem.price -productItem.discount:productItem.price}}</span>
+        </div>
+    </a>
+    <div class="crud-actions">
+        <a [routerLink]="'/product/details/'+productItem.id"><i class="far fa-eye"></i></a>
+        <a [routerLink]="['/product','edit',productItem.id]"><i class="fas fa-edit"></i></a>
+        <a (click)="RemoveProduct(productItem)"><i class="fas fa-trash-alt"></i></a>
+    </div>
+
+
+
+

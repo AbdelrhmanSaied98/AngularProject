@@ -1,0 +1,26 @@
+<div class="container">
+    <form class="login" #loginForm=ngForm>
+        <h4 class="login__header">
+            I'M A RETURNING CUSTOMER
+        </h4>
+        <div class="form-group">
+            <label for="">E-mail Address</label>
+            <input required ngModel class="form-control" type="email" name="email" id="">
+        </div>
+        <div class="form-group login__Password">
+            <a href="#" class="login__forget-password">(Forget Password?)</a>
+            <label for="">Password</label>
+            <input class="form-control" type="password" ngModel name="password" id="">
+        </div>
+        <div class="login__remember-me">
+            <div class="form-group__checkbox"><input type="checkbox" name="" id="">
+            <span>Remember Me</span>
+        </div>
+        <div class="add-product__actions">
+                <button href="#" class="btn btn--gray">Cancel</button>
+                <button href="#" class="btn btn--primary"(click)="onLogin(loginForm)">Login</button>
+            </div>
+        </div>
+        <a href="#" class="login__register-now">Register Now</a>
+    </form>
+</div>
